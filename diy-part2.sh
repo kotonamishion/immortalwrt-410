@@ -20,3 +20,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # git clone https://github.com/gSpotx2f/luci-app-cpu-status-mini package/luci-app-cpu-status-mini
 # git clone https://github.com/lkiuyu/luci-app-temp-status package/luci-app-temp-status
 # git clone https://github.com/lkiuyu/DbusSmsForwardCPlus package/DbusSmsForwardCPlus
+if [ ! -d package/libs/libffi ]; then
+  mkdir -p package/libs/libffi
+  curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/main/package/libs/libffi/Makefile \
+    -o package/libs/libffi/Makefile
+fi
